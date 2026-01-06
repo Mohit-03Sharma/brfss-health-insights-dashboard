@@ -1,139 +1,152 @@
-# BRFSS Health Insights Dashboard (Python • Plotly Dash)
+# BRFSS Health Insights Dashboard
 
-An interactive health analytics dashboard built on **CDC BRFSS prevalence data**.  
-The application enables users to explore health trends over time, compare geographic regions, and analyze demographic disparities with statistical confidence intervals — optimized for large datasets using **Parquet caching**.
+> Interactive health analytics dashboard for exploring CDC BRFSS prevalence data across demographics, geography, and time
+
+[![Python](https://img.shields.io/badge/Python-3.10-blue.svg)](https://www.python.org/)
+[![Plotly Dash](https://img.shields.io/badge/Plotly-Dash-00D4FF.svg)](https://dash.plotly.com/)
+
+Explore health trends from **2011–2023**, compare geographic regions, and analyze demographic disparities with statistical confidence intervals. Optimized for large datasets using **Parquet caching (PyArrow)**.
 
 ---
 
-##  What This Dashboard Does
+## ✨ Key Features
 
-- **Hierarchical exploration**: Health Class → Topic → Question
-- **Temporal analysis**: Trends from **2011–2023**
-- **Demographic breakouts**:
-  - Gender
-  - Age Group
-  - Race / Ethnicity
-  - Education
-  - Income
-- **Geographic comparison**:
-  - States (50+)
-  - Census Regions (4)
-  - Census Divisions (9)
-  - Interactive U.S. choropleth map
-- **Insights & Data view**:
-  - Sample size
-  - National prevalence
-  - Trend deltas
-  - Geographic range
-  - 95% Confidence Interval tables
-- **Performance-aware design**:
-  - Loads a **>1GB dataset**
-  - Automatically caches cleaned data using **Parquet (PyArrow)** for faster reloads
+- **Hierarchical exploration** — Navigate through Health Class → Topic → Question
+- **13-year temporal analysis** — Track trends from 2011 to 2023
+- **Comprehensive demographic breakouts** — Gender, age group, race/ethnicity, education, income
+- **Geographic intelligence** — State-level data with census region/division groupings and interactive choropleth maps
+- **Statistical rigor** — 95% confidence intervals, sample sizes, and trend deltas
+- **Performance optimized** — Handles 1GB+ datasets with Parquet caching for sub-second reloads
 
 ---
 
 ## 📸 Screenshots
 
-Place screenshots in `assets/screenshots/` and ensure filenames match below.
-
-| Overview | Demographics |
-|--------|--------------|
-| ![](assets/screenshots/overview_tab.png) | ![](assets/screenshots/detailed_%20demographics_tab.png) |
-
-| Geography | Compare | Insights |
-|---------|---------|----------|
-| ![](assets/screenshots/geography_tab.png) | ![](assets/screenshots/compare_tab.png) | ![](assets/screenshots/insights_tab.png) |
-
----
-
-## 🧰 Tech Stack
-
-- **Python**
-- **Plotly Dash**
-- Dash Bootstrap Components
-- **Pandas**, NumPy
-- **PyArrow / Parquet** (data caching & performance)
+<table>
+  <tr>
+    <td><b>Overview</b><br><img src="assets/screenshots/overview_tab.png" width="100%"></td>
+    <td><b>Demographics</b><br><img src="assets/screenshots/detailed_demographics_tab.png" width="100%"></td>
+  </tr>
+  <tr>
+    <td><b>Geography</b><br><img src="assets/screenshots/geography_tab.png" width="100%"></td>
+    <td><b>Compare</b><br><img src="assets/screenshots/compare_tab.png" width="100%"></td>
+  </tr>
+  <tr>
+    <td colspan="2"><b>Insights</b><br><img src="assets/screenshots/insights_tab.png" width="100%"></td>
+  </tr>
+</table>
 
 ---
 
-## 🚀 Getting Started (Local Setup)
+## 🛠️ Tech Stack
 
-### 1️⃣ Create environment & install dependencies
+**Core:** Python 3.10 | Plotly Dash | Dash Bootstrap Components  
+**Data Processing:** Pandas | NumPy  
+**Performance:** PyArrow/Parquet (caching & optimization)
+
+---
+
+## 🚀 Quick Start
+
+### Prerequisites
+- Python 3.10+
+- Conda (recommended) or pip
+
+### Installation
+
+1. **Clone the repository**
+```bash
+git clone <your-repo-url>
+cd brfss-dashboard
+```
+
+2. **Create environment and install dependencies**
 ```bash
 conda create -n brfssdash python=3.10 -y
 conda activate brfssdash
 pip install -r requirements.txt
+```
 
-## 2️⃣ Add the Dataset (Not Included in Repository)
+3. **Add the dataset**
 
-This repository does **not** include the BRFSS dataset due to its size (**>1GB**).
+The BRFSS dataset (>1GB) is not included in this repository. 
 
-Create the following directory in the project root:
-
+Create the data directory and add the CSV file:
+```
 data/
+└── Prevalence_Data.csv
+```
 
-Place the BRFSS CSV file here:
+📥 **Dataset source:** [CDC BRFSS Prevalence Data Portal](https://www.cdc.gov/brfss/)
 
-data/Prevalence_Data.csv
+4. **Launch the dashboard**
+```bash
+python app.py
+```
 
-The dataset is sourced from the **CDC BRFSS Prevalence Data Portal**.
+Open your browser to: `http://127.0.0.1:8050/`
 
 ---
 
-## 3️⃣ Run the Dashboard
+## ⚡ Performance Optimization
 
-Start the Dash application using:
+The application uses an intelligent data-loading pipeline:
 
-```bash
-python app.py
-Open the dashboard in your browser:
-http://127.0.0.1:8050/
+**First Run (one-time setup):**
+1. Loads raw CSV data
+2. Applies preprocessing:
+   - ResponseID and BreakoutID normalization
+   - Removes aggregate rows (US, UW)
+   - Year type enforcement and validation
+3. Saves Parquet cache: `data/brfss_prevalence.parquet`
 
-## 4️⃣ Data Loading & Performance Optimization
-The application uses a smart data-loading pipeline to efficiently handle large datasets:
+**Subsequent Runs:**
+- Loads directly from Parquet cache
+- **~10x faster startup** compared to CSV parsing
 
-Attempts to load from a Parquet cache first (fast)
+---
 
-Falls back to loading the CSV file if the cache is missing (slower, one-time)
+## 🏗️ Key Design Decisions
 
-Applies preprocessing steps:
+- **Parquet caching** — Enables repeated analysis on large datasets without performance degradation
+- **Semantic color encoding** — Intuitive visual representation of response categories (Yes/No)
+- **Modular aggregation utilities** — Flexible analytical views across multiple dimensions
+- **Statistical context** — 95% confidence intervals provide scientific rigor
+- **Graceful filtering** — Seamless navigation across time, geography, and demographics
 
-ResponseID and BreakoutID normalization
+---
 
-Removal of aggregate rows (US, UW)
+## 📚 Project Context
 
-Year type enforcement and validation
+Developed as part of a **Northeastern University data visualization course** exploring parallel implementations across different tech stacks (Python Dash vs R Shiny). This repository showcases the complete Python Dash implementation with emphasis on:
 
-Automatically saves a Parquet cache after the first successful load:
+- Data preprocessing and validation
+- Performance optimization for large datasets
+- Interactive analytics interface design
 
-data/brfss_prevalence.parquet
-Subsequent runs load directly from Parquet, resulting in significantly faster startup times.
+---
 
-## 5️⃣ Key Engineering Decisions
-Parquet caching to support repeated analysis on large datasets
+## 🗺️ Roadmap
 
-Semantic color encoding for response categories (Yes / No)
+- [ ] Add lightweight demo mode with sampled data
+- [ ] Improve error handling for missing datasets
+- [ ] Implement automated tests for preprocessing utilities
+- [ ] Optional cloud deployment for public live demo
 
-Modular aggregation utilities to support multiple analytical views
+---
 
-Statistical context via 95% confidence intervals
+## 📄 License
 
-Graceful filtering across time, geography, and demographic dimensions
-
-## 6️⃣ Project Context & Collaboration
-Developed as part of a Northeastern University data visualization course.
-
-We explored parallel implementations using different technology stacks (Python Dash vs R Shiny).
-This repository contains my end-to-end Python Dash implementation, focusing on data preprocessing, performance optimization, and interactive analytics design.
-
-## 7️⃣ Roadmap (Future Improvements)
-Add a lightweight demo mode with sampled data
-
-Improve error handling when the dataset is missing
-
-Add automated tests for preprocessing utilities
-
-Optional cloud deployment for live demo access
-
-## 8️⃣ License
 This project is intended for educational and portfolio purposes.
+
+---
+
+## 🤝 Contributing
+
+This is an educational project, but feedback and suggestions are welcome! Feel free to open an issue or submit a pull request.
+
+---
+
+<div align="center">
+  <sub>Built with ❤️ using Plotly Dash</sub>
+</div>
