@@ -9,7 +9,7 @@ Explore health trends from **2011–2023**, compare geographic regions, and anal
 
 ---
 
-## ✨ Key Features
+##  Key Features
 
 - **Hierarchical exploration** — Navigate through Health Class → Topic → Question
 - **13-year temporal analysis** — Track trends from 2011 to 2023
@@ -20,7 +20,7 @@ Explore health trends from **2011–2023**, compare geographic regions, and anal
 
 ---
 
-## 📸 Screenshots
+##  Screenshots
 
 ### Overview
 ![Overview Tab](assets/screenshots/Overview_Tab.png)
@@ -39,7 +39,7 @@ Explore health trends from **2011–2023**, compare geographic regions, and anal
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 **Core:** Python 3.10 | Plotly Dash | Dash Bootstrap Components  
 **Data Processing:** Pandas | NumPy  
@@ -47,7 +47,7 @@ Explore health trends from **2011–2023**, compare geographic regions, and anal
 
 ---
 
-## 🚀 Quick Start
+##  Quick Start
 
 ### Prerequisites
 - Python 3.10+
@@ -78,7 +78,7 @@ data/
 └── Prevalence_Data.csv
 ```
 
-📥 **Dataset source:** [CDC BRFSS Prevalence Data Portal](https://www.cdc.gov/brfss/)
+ **Dataset source:** [CDC BRFSS Prevalence Data Portal](https://www.cdc.gov/brfss/)
 
 4. **Launch the dashboard**
 ```bash
@@ -89,7 +89,7 @@ Open your browser to: `http://127.0.0.1:8050/`
 
 ---
 
-## ⚡ Performance Optimization
+##  Performance Optimization
 
 The application uses an intelligent data-loading pipeline:
 
@@ -107,7 +107,7 @@ The application uses an intelligent data-loading pipeline:
 
 ---
 
-## 🏗️ Key Design Decisions
+##  Key Design Decisions
 
 - **Parquet caching** — Enables repeated analysis on large datasets without performance degradation
 - **Semantic color encoding** — Intuitive visual representation of response categories (Yes/No)
@@ -117,7 +117,7 @@ The application uses an intelligent data-loading pipeline:
 
 ---
 
-## 📚 Project Context
+##  Project Context
 
 Developed as part of a **Northeastern University data visualization course** exploring parallel implementations across different tech stacks (Python Dash vs R Shiny). This repository showcases the complete Python Dash implementation with emphasis on:
 
@@ -127,7 +127,7 @@ Developed as part of a **Northeastern University data visualization course** exp
 
 ---
 
-## 🗺️ Roadmap
+##  Roadmap
 
 - [ ] Add lightweight demo mode with sampled data
 - [ ] Improve error handling for missing datasets
@@ -136,18 +136,15 @@ Developed as part of a **Northeastern University data visualization course** exp
 
 ---
 
-## 📄 License
+##  License
 
 This project is intended for educational and portfolio purposes.
 
 ---
 
-## 🤝 Contributing
+##  Contributing
 
 This is an educational project, but feedback and suggestions are welcome! Feel free to open an issue or submit a pull request.
 
 ---
 
-<div align="center">
-  <sub>Built with ❤️ using Plotly Dash</sub>
-</div>
