@@ -1,0 +1,15 @@
+# data (too large)
+data/
+*.parquet
+
+# python
+__pycache__/
+*.pyc
+
+# notebooks
+.ipynb_checkpoints/
+
+# env
+.env
+.venv
+venv/

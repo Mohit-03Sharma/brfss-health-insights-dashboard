@@ -1,0 +1,562 @@
+/* assets/sidebar_styles.css */
+
+/* ========== GLOBAL STYLES ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background-color: #f8f9fa;
+    overflow-x: hidden;
+}
+
+/* ========== SIDEBAR LAYOUT ========== */
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 320px;
+    background: linear-gradient(180deg, #2c3e50 0%, #34495e 100%);
+    color: #ecf0f1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 20px;
+    box-shadow: 4px 0 12px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+}
+
+.sidebar-header {
+    padding-bottom: 10px;
+}
+
+.sidebar-title {
+    color: #ecf0f1;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 0;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+.sidebar-subtitle {
+    color: #bdc3c7;
+    font-size: 0.85rem;
+    margin-bottom: 0;
+    margin-top: -5px;
+}
+
+.sidebar-divider {
+    border-color: rgba(255, 255, 255, 0.2);
+    margin: 15px 0;
+}
+
+.sidebar-label {
+    color: #ecf0f1;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.sidebar-dropdown .Select-control,
+.sidebar-dropdown .css-1uccc91-control {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    color: #ecf0f1 !important;
+    min-height: 36px !important;
+    font-size: 0.85rem !important;
+}
+
+.sidebar-dropdown .Select-control:hover,
+.sidebar-dropdown .css-1uccc91-control:hover {
+    border-color: rgba(255, 255, 255, 0.4) !important;
+}
+
+.sidebar-dropdown .Select-value-label,
+.sidebar-dropdown .css-1uccc91-singleValue {
+    color: #ecf0f1 !important;
+}
+
+.sidebar-dropdown .Select-placeholder,
+.sidebar-dropdown .css-1jqq78o-placeholder {
+    color: #bdc3c7 !important;
+}
+
+.sidebar-dropdown .Select-menu-outer,
+.sidebar-dropdown .css-1nmdiq5-menu {
+    background-color: #34495e !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+.sidebar-dropdown .Select-option,
+.sidebar-dropdown .css-10wo9uf-option {
+    background-color: #34495e !important;
+    color: #ecf0f1 !important;
+}
+
+.sidebar-dropdown .Select-option:hover,
+.sidebar-dropdown .css-10wo9uf-option:hover {
+    background-color: #2E86AB !important;
+}
+
+/* Remove dropdown arrows */
+.sidebar-dropdown .Select-arrow-zone,
+.sidebar-dropdown .css-tlfecz-indicatorContainer {
+    display: none !important;
+}
+
+.sidebar-checklist {
+    color: #ecf0f1;
+    font-size: 0.85rem;
+}
+
+.sidebar-checklist label {
+    margin-right: 15px;
+    margin-bottom: 8px;
+}
+
+.sidebar-checklist input[type="checkbox"] {
+    margin-right: 6px;
+}
+
+.sidebar-cache {
+    color: #95a5a6;
+    font-size: 0.75rem;
+    text-align: center;
+    padding: 8px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+}
+
+/* Range Slider in Sidebar */
+.sidebar .rc-slider-track {
+    background-color: #2E86AB !important;
+    height: 4px !important;
+}
+
+.sidebar .rc-slider-handle {
+    border-color: #2E86AB !important;
+    background-color: #ecf0f1 !important;
+    height: 16px !important;
+    width: 16px !important;
+    margin-top: -6px !important;
+}
+
+.sidebar .rc-slider-handle:hover {
+    box-shadow: 0 0 0 5px rgba(46, 134, 171, 0.3) !important;
+}
+
+.sidebar .rc-slider-rail {
+    background-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+/* Scrollbar for sidebar */
+.sidebar::-webkit-scrollbar {
+    width: 8px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+/* ========== MAIN CONTENT AREA ========== */
+.main-content {
+    margin-left: 320px;
+    padding: 20px;
+    min-height: 100vh;
+    background-color: #f8f9fa;
+}
+
+.tab-content-area {
+    padding-top: 15px;
+}
+
+/* ========== TABS STYLING ========== */
+.custom-tabs .nav-tabs {
+    border-bottom: 2px solid #dee2e6;
+    margin-bottom: 0;
+}
+
+.custom-tab {
+    color: #6c757d !important;
+    font-weight: 500 !important;
+    padding: 12px 24px !important;
+    border: none !important;
+    background: none !important;
+    transition: all 0.3s ease !important;
+    font-size: 0.95rem !important;
+}
+
+.custom-tab:hover {
+    color: #2E86AB !important;
+    background-color: rgba(46, 134, 171, 0.05) !important;
+}
+
+.custom-tab.active {
+    color: #2E86AB !important;
+    background-color: transparent !important;
+    border: none !important;
+    border-bottom: 3px solid #2E86AB !important;
+    font-weight: 600 !important;
+}
+
+/* ========== CARDS ========== */
+.card {
+    border-radius: 8px;
+    border: 1px solid #e1e4ea;
+    transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.card-header {
+    background-color: rgba(46, 134, 171, 0.05);
+    border-bottom: 1px solid #e1e4ea;
+    padding: 12px 20px;
+    font-weight: 600;
+}
+
+.card-body {
+    padding: 15px;
+}
+
+.shadow-sm {
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06) !important;
+}
+
+/* ========== INSIGHTS TEXT ========== */
+.insights-text {
+    white-space: pre-line;
+    line-height: 1.8;
+    font-size: 0.9rem;
+}
+
+.insights-text strong {
+    color: #2E86AB;
+    font-weight: 600;
+}
+
+/* ========== TABLE STYLING ========== */
+.dash-table-container {
+    font-family: 'Inter', Arial, sans-serif;
+}
+
+.dash-spreadsheet-container .dash-spreadsheet-inner table {
+    border-collapse: collapse !important;
+}
+
+.dash-spreadsheet-container .dash-spreadsheet-inner th {
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    font-size: 0.85rem !important;
+}
+
+/* ========== RESPONSIVE DESIGN ========== */
+@media (max-width: 992px) {
+    .sidebar {
+        width: 280px;
+    }
+    
+    .main-content {
+        margin-left: 280px;
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        position: relative;
+        height: auto;
+    }
+    
+    .main-content {
+        margin-left: 0;
+        padding: 15px;
+    }
+    
+    .custom-tab {
+        padding: 10px 16px !important;
+        font-size: 0.85rem !important;
+    }
+}
+
+/* ========== LOADING SPINNER ========== */
+._dash-loading {
+    opacity: 0.7;
+}
+
+._dash-loading-callback {
+    position: fixed;
+    top: 50%;
+    left: calc(50% + 160px);
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+}
+
+/* ========== UTILITIES ========== */
+.text-center {
+    text-align: center;
+}
+
+.mt-2 { margin-top: 0.5rem; }
+.mt-3 { margin-top: 1rem; }
+.mb-2 { margin-bottom: 0.5rem; }
+.mb-3 { margin-bottom: 1rem; }
+.p-2 { padding: 0.5rem; }
+.p-3 { padding: 1rem; }
+
+.fw-bold {
+    font-weight: 600;
+}
+
+.small {
+    font-size: 0.85rem;
+}
+
+/* ========== SMOOTH TRANSITIONS ========== */
+* {
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+/* ========== BOOTSTRAP ICONS ========== */
+.bi {
+    vertical-align: middle;
+}
+/* assets/custom.css */
+
+/* ========== GLOBAL STYLES ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background-color: #f8f9fa;
+    overflow-x: hidden;
+}
+
+/* ========== DROPDOWN TEXT WRAPPING (CRITICAL FIX) ========== */
+
+/* For React-Select v2+ (Dash >= 2.0) */
+.Select-menu-outer .VirtualizedSelectOption,
+.css-1n7v3ny-option,
+.css-10wo9uf-option {
+    white-space: normal !important;
+    word-wrap: break-word !important;
+    line-height: 1.4 !important;
+    padding: 10px 12px !important;
+    min-height: 40px !important;
+    height: auto !important;
+}
+
+/* Selected value text wrapping */
+.Select-value-label,
+.css-1uccc91-singleValue,
+.css-qc6sy-singleValue {
+    white-space: normal !important;
+    word-wrap: break-word !important;
+    overflow: visible !important;
+    text-overflow: clip !important;
+    line-height: 1.3 !important;
+    padding: 4px 0 !important;
+}
+
+/* Dropdown control - allow height to expand */
+.Select-control,
+.css-1uccc91-control,
+.css-13cymwt-control,
+.css-t3ipsp-control {
+    min-height: 38px !important;
+    height: auto !important;
+    padding: 4px 0 !important;
+}
+
+/* Dropdown menu container */
+.Select-menu-outer,
+.css-1nmdiq5-menu,
+.css-26l3qy-menu {
+    z-index: 9999 !important;
+}
+
+/* Multi-select values */
+.Select-value,
+.css-1rhbuit-multiValue {
+    white-space: normal !important;
+    word-wrap: break-word !important;
+}
+
+/* ========== SIDEBAR SCROLLBAR ========== */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+/* ========== CARD STYLING ========== */
+.card {
+    border-radius: 8px;
+    border: 1px solid #e1e4ea;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+.card-header {
+    background-color: rgba(46, 134, 171, 0.05);
+    border-bottom: 1px solid #e1e4ea;
+}
+
+/* ========== TAB STYLING ========== */
+.nav-tabs {
+    border-bottom: 2px solid #dee2e6 !important;
+}
+
+.nav-tabs .nav-link {
+    color: #6c757d !important;
+    font-weight: 500 !important;
+    padding: 12px 20px !important;
+    border: none !important;
+    background: none !important;
+    transition: all 0.3s ease !important;
+}
+
+.nav-tabs .nav-link:hover {
+    color: #2E86AB !important;
+    background-color: rgba(46, 134, 171, 0.05) !important;
+}
+
+.nav-tabs .nav-link.active {
+    color: #2E86AB !important;
+    background-color: transparent !important;
+    border: none !important;
+    border-bottom: 3px solid #2E86AB !important;
+    font-weight: 600 !important;
+}
+
+/* ========== RANGE SLIDER ========== */
+.rc-slider-track {
+    background-color: #2E86AB !important;
+    height: 6px !important;
+}
+
+.rc-slider-handle {
+    border-color: #2E86AB !important;
+    background-color: #ecf0f1 !important;
+    height: 18px !important;
+    width: 18px !important;
+    margin-top: -6px !important;
+}
+
+.rc-slider-handle:hover,
+.rc-slider-handle:active {
+    box-shadow: 0 0 0 5px rgba(46, 134, 171, 0.3) !important;
+}
+
+.rc-slider-rail {
+    background-color: rgba(255, 255, 255, 0.3) !important;
+    height: 6px !important;
+}
+
+.rc-slider-mark-text {
+    color: #ecf0f1 !important;
+    font-size: 0.7rem !important;
+}
+
+/* ========== TABLE STYLING ========== */
+.dash-table-container {
+    font-family: 'Inter', Arial, sans-serif !important;
+}
+
+.dash-spreadsheet-container .dash-cell {
+    line-height: 1.4 !important;
+}
+
+/* ========== LOADING SPINNER ========== */
+._dash-loading {
+    opacity: 0.7;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 1200px) {
+    .Select-value-label,
+    .css-1uccc91-singleValue {
+        font-size: 0.8rem !important;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Mobile responsive - hide sidebar or make it collapsible */
+    body {
+        font-size: 0.85rem;
+    }
+}
+
+/* ========== UTILITY CLASSES ========== */
+.text-center { text-align: center; }
+.mt-2 { margin-top: 0.5rem; }
+.mt-3 { margin-top: 1rem; }
+.mb-2 { margin-bottom: 0.5rem; }
+.mb-3 { margin-bottom: 1rem; }
+.fw-bold { font-weight: 600; }
+.small { font-size: 0.85rem; }
+
+/* ========== SIDEBAR DROPDOWN TEXT FIX ========== */
+.Select-menu-outer {
+    background-color: white !important;
+    color: #212529 !important;
+}
+
+.Select-option,
+.VirtualizedSelectOption,
+.css-1n7v3ny-option,
+.css-10wo9uf-option {
+    color: #212529 !important;
+    background-color: white !important;
+}
+
+.Select-option:hover,
+.css-1n7v3ny-option:hover,
+.css-10wo9uf-option:hover {
+    background-color: #f0f0f0 !important;
+    color: #212529 !important;
+}
+
+/* Selected value text (in the dropdown box) */
+.Select-value-label,
+.css-1uccc91-singleValue {
+    color: #212529 !important;
+}
+
+/* Placeholder text */
+.Select-placeholder,
+.css-1jqq78o-placeholder {
+    color: #6c757d !important;
+}
