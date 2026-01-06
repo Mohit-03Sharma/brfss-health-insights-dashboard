@@ -22,19 +22,20 @@ Explore health trends from **2011–2023**, compare geographic regions, and anal
 
 ## 📸 Screenshots
 
-<table>
-  <tr>
-    <td><b>Overview</b><br><img src="assets/screenshots/overview_tab.png" width="100%"></td>
-    <td><b>Demographics</b><br><img src="assets/screenshots/detailed_demographics_tab.png" width="100%"></td>
-  </tr>
-  <tr>
-    <td><b>Geography</b><br><img src="assets/screenshots/geography_tab.png" width="100%"></td>
-    <td><b>Compare</b><br><img src="assets/screenshots/compare_tab.png" width="100%"></td>
-  </tr>
-  <tr>
-    <td colspan="2"><b>Insights</b><br><img src="assets/screenshots/insights_tab.png" width="100%"></td>
-  </tr>
-</table>
+### Overview
+![Overview Tab](assets/screenshots/overview_tab.png)
+
+### Demographics
+![Demographics Tab](assets/screenshots/detailed_demographics_tab.png)
+
+### Geography
+![Geography Tab](assets/screenshots/geography_tab.png)
+
+### Compare
+![Compare Tab](assets/screenshots/compare_tab.png)
+
+### Insights
+![Insights Tab](assets/screenshots/insights_tab.png)
 
 ---
 
